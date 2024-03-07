@@ -1,13 +1,16 @@
+// Enforces branch naming conventions
 import { execSync } from "child_process";
 
 const branchName = execSync("git branch --show-current").toString().trim();
+const excludedBranches = ["main"];
 const validBranchPrefixes = ["feature/", "hotfix/", "bugfix/", "test/"];
 
+const isExcluded = excludedBranches.includes(branchName);
 const isValid = validBranchPrefixes.some((prefix) =>
   branchName.startsWith(prefix)
 );
 
-if (!isValid) {
+if (!isExcluded && !isValid) {
   console.error(`Invalid branch name: ${branchName}`);
   console.error(
     "Branch name must start with one of the following prefixes:",
