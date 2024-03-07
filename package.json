@@ -3,13 +3,22 @@
   "version": "1.0.0",
   "description": "Site for community co-operative",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run test:unit && npm run test:e2e",
+    "test:unit": "jest",
+    "test:e2e": "cypress run",
+    "test:e2e:open": "cypress open",
+    "prepare": "husky"
   },
   "author": "MartinSWDev <martinsoftwaredev@outlook.com>",
   "license": "ISC",
   "devDependencies": {
+    "@commitlint/cli": "^19.0.3",
+    "@commitlint/config-conventional": "^19.0.3",
     "cypress": "^13.6.6",
+    "husky": "^9.0.11",
     "jest": "^29.7.0"
   }
 }
+
