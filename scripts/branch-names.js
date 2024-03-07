@@ -1,3 +1,4 @@
+// Enforces branch naming conventions
 import { execSync } from "child_process";
 
 const branchName = execSync("git branch --show-current").toString().trim();
