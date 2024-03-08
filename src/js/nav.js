@@ -1,9 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Dropdown selectors
   const dropdownButton = document.getElementById("dropdownButton");
   const dropdownMenu = document.getElementById("dropdownMenu");
 
+  // Dropdown toggle
   dropdownButton.addEventListener("click", () => {
-    dropdownMenu.classList.toggle("hidden");
+    const isHidden = dropdownMenu.classList.toggle("hidden");
+    dropdownButton.textContent = isHidden ? "Show" : "Hide";
   });
 });
 

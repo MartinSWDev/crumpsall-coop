@@ -9,15 +9,15 @@
   <body class="">
     <header class="h-[90vh] flex flex-col">
       <section id="hero" class="bg-slate-300 h-full"></section>
-      <div
-        id="dropdown"
-        class="flex justify-between items-center py-4 px-16 bg-gray-200"
-      >
-        <p>Section</p>
-        <button id="dropdownButton" class="cursor-pointer">Show</button>
-      </div>
     </header>
-    <nav id="dropdownMenu" class="hidden bg-neutral-500">
+    <div
+      id="dropdown"
+      class="sticky top-0 z-50 flex justify-between items-center py-4 px-16 bg-gray-200"
+    >
+      <p>Section</p>
+      <button id="dropdownButton" class="cursor-pointer">Show</button>
+    </div>
+    <nav id="dropdownMenu" class="sticky top-14 z-50 hidden bg-neutral-500">
       <ul class="grid grid-cols-3 gap-4 px-16">
         <li><a href="#about" class="block py-4">About</a></li>
         <li><a href="#get-involved" class="block py-4">Get involved</a></li>
