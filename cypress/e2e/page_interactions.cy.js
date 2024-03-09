@@ -41,43 +41,44 @@ describe("Page Interactions", () => {
     });
   });
 
-  // describe("Section name display", () => {
-  //   it("Displays the correct section name in the dropdown when scrolling to the first section in main", () => {
-  //     cy.get("main section")
-  //       .first()
-  //       .then(($section) => {
-  //         const sectionName = $section.find("h2").text();
+  describe("Section name display", () => {
+    it("Displays the correct section name in the dropdown when scrolling to the first section in main", () => {
+      cy.get("main section")
+        .first()
+        .then(($section) => {
+          const sectionName = $section.find("h2").text();
 
-  //         cy.wrap($section).scrollIntoView({ duration: 500 });
-  //         cy.get("#dropdown p").should("have.text", sectionName);
-  //       });
-  //   });
+          cy.wrap($section).scrollIntoView({ duration: 500 });
+          cy.get("#dropdown p").should("have.text", sectionName);
+        });
+    });
 
-  //   it("Displays the correct section name in the dropdown when scrolling to the last section in main", () => {
-  //     cy.get("main section")
-  //       .last()
-  //       .then(($section) => {
-  //         const sectionName = $section.find("h2").text();
+    it("Displays the correct section name in the dropdown when scrolling to the last section in main", () => {
+      cy.get("main section")
+        .last()
+        .then(($section) => {
+          const sectionName = $section.find("h2").text();
 
-  //         cy.wrap($section).scrollIntoView({ duration: 500 });
-  //         cy.get("#dropdown p").should("have.text", sectionName);
-  //       });
-  //   });
+          cy.wrap($section).scrollIntoView({ duration: 500 });
+          cy.get("#dropdown p").should("have.text", sectionName);
+        });
+    });
 
-  //   it("Displays the last section name in the dropdown when moving out of main and hides the dropdown", () => {
-  //     cy.get("main section")
-  //       .last()
-  //       .then(($section) => {
-  //         const lastSectionName = $section.find("h2").text();
+    it("Displays the last section name in the dropdown when moving out of main and hides the dropdown", () => {
+      cy.get("main section")
+        .last()
+        .then(($section) => {
+          const lastSectionName = $section.find("h2").text();
+          cy.wrap($section).scrollIntoView({ duration: 500 });
 
-  //         cy.get("section:not(main section)")
-  //           .first()
-  //           .scrollIntoView({ duration: 500 });
-  //         cy.get("#dropdown p").should("have.text", lastSectionName);
-  //         cy.get("#dropdown").should("not.be.visible");
-  //       });
-  //   });
-  // });
+          cy.get("section:not(main section)")
+            .last()
+            .scrollIntoView({ duration: 500 });
+          cy.get("#dropdown p").should("have.text", lastSectionName);
+          cy.get("#dropdown").should("not.be.visible");
+        });
+    });
+  });
 
   // * progress bar
 });

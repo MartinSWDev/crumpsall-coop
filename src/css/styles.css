@@ -2,3 +2,7 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+section {
+  scroll-margin-top: 56px;
+}
+
