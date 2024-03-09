@@ -13,31 +13,39 @@ describe("Page Interactions", () => {
       cy.get("#dropdownButton").click();
       cy.get("#dropdownMenu").should("have.class", "hidden");
     });
+
+    // it("Navigates to the correct section on link click and menu closes", () => {
+    //   cy.get("#dropdownButton").click();
+    //   cy.get("#dropdownMenu").should("not.have.class", "hidden");
+    //   cy.get("#progress").click();
+    //   cy.url().should("include", "#progress");
+    //   cy.get("#progress").should("be.visible");
+    //   cy.get("#dropdownMenu").should("have.class", "hidden");
+    // });
   });
 
   describe("Sticky Navbar", () => {
-    it("Sticks navbar div to the top of the page over main content", () => {
-      cy.get("main").scrollIntoView();
+    it("Sticky navbar div to the top of the page over main content", () => {
+      cy.get("#faq").scrollIntoView();
       cy.get("#dropdown").should("have.class", "sticky");
       cy.get("#dropdownMenu").should("have.class", "sticky");
       cy.get("#dropdown").should("be.visible");
-      cy.get("#dropdownButton").click();
+      cy.get("#dropdownButton").should("be.visible").click();
       cy.get("#dropdownMenu").should("be.visible");
-
       cy.get("#dropdownButton").click();
+      cy.get("#dropdownMenu").should("not.be.visible");
+    });
+    it("Sticky navbar div should be out of view below main", () => {
+      cy.get("main").scrollIntoView();
       cy.get("footer").scrollIntoView();
       cy.get("#dropdown").should("not.be.visible");
       cy.get("#dropdownMenu").should("not.be.visible");
     });
-    it("Sticks navbar div should be out of view below main", () => {
-      cy.get("main").scrollIntoView();
-      cy.get("#dropdownButton").click();
-      cy.get("#dropdownMenu").should("be.visible");
-
-      cy.get("#dropdownButton").click();
+    it("Restores navbar to sticky position when scrolling back up", () => {
       cy.get("footer").scrollIntoView();
       cy.get("#dropdown").should("not.be.visible");
-      cy.get("#dropdownMenu").should("not.be.visible");
+      cy.get("main").scrollIntoView();
+      cy.get("#dropdown").should("be.visible");
     });
   });
 
@@ -78,6 +86,11 @@ describe("Page Interactions", () => {
           cy.get("#dropdown").should("not.be.visible");
         });
     });
+
+    // it("Displays the correct section name in the dropdown when navlink is clicked", () => {
+    //   cy.get("#dropdownMenu ul li a[href='#faq']").click();
+    //   cy.get("#dropdown p").should("have.text", "Frequently Asked Questions");
+    // });
   });
 
   // * progress bar
