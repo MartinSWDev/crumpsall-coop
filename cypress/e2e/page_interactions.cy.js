@@ -90,45 +90,52 @@ describe("Page Interactions", () => {
     });
   });
 
-  // describe("Progress Bar", () => {
-  //   it("updates the progress bar as the main content is scrolled through", () => {
-  //     let initialProgress;
-  //     cy.get("#progressBar")
-  //       .invoke("width")
-  //       .then((width) => {
-  //         initialProgress = width;
-  //       });
-  //     cy.get("main").scrollTo("bottom");
-  //     cy.get("#progressBar")
-  //       .invoke("width")
-  //       .should((width) => {
-  //         expect(width).to.be.greaterThan(initialProgress);
-  //       });
-  //   });
-  //   it("does not increase progress once the bottom of main is reached", () => {
-  //     cy.get("main").scrollTo("bottom");
-  //     cy.get("#progressBar").invoke("width").as("bottomProgress");
-  //     cy.window().scrollTo("bottom");
-  //     cy.get("@bottomProgress").then((bottomProgress) => {
-  //       cy.get("#progressBar")
-  //         .invoke("width")
-  //         .should((width) => {
-  //           expect(width).to.eq(bottomProgress);
-  //         });
-  //     });
-  //   });
-  //   it("decreases progress when scrolling back up the main content", () => {
-  //     cy.get("main").scrollTo("bottom");
-  //     cy.get("#progressBar").invoke("width").as("bottomProgress");
-  //     cy.get("main").scrollTo("top");
-  //     cy.get("@bottomProgress").then((bottomProgress) => {
-  //       cy.get("#progressBar")
-  //         .invoke("width")
-  //         .should((width) => {
-  //           expect(width).to.be.lessThan(bottomProgress);
-  //         });
-  //     });
-  //   });
-  // });
+  describe("Progress Bar", () => {
+    it("starts at 0% width before scrolling", () => {
+      cy.get("#progressBar").should("have.attr", "style", "width: 0%");
+    });
+
+    it("increases width after scrolling down", () => {
+      cy.window().then((win) => {
+        win.scrollBy(0, 500);
+        cy.wait(500);
+        cy.get("#progressBar")
+          .invoke("attr", "style")
+          .then((style) => {
+            const widthPercent = parseInt(style.split(":")[1].trim());
+            expect(widthPercent).to.be.greaterThan(0);
+          });
+      });
+    });
+
+    it("reaches 100% width at the bottom of the main content", () => {
+      cy.scrollTo("bottom");
+      cy.wait(500);
+      cy.get("#progressBar")
+        .invoke("attr", "style")
+        .then((style) => {
+          const widthPercent = parseInt(style.split(":")[1].trim());
+          expect(widthPercent).to.be.closeTo(100, 10);
+        });
+    });
+
+    it("decreases width when scrolling back up the main content", () => {
+      cy.scrollTo("bottom");
+      cy.wait(500);
+      cy.get("#progressBar")
+        .invoke("attr", "style")
+        .then((bottomStyle) => {
+          const bottomWidthPercent = parseInt(bottomStyle.split(":")[1].trim());
+          cy.get("main").scrollIntoView({ duration: 500 });
+          cy.wait(500);
+          cy.get("#progressBar")
+            .invoke("attr", "style")
+            .then((topStyle) => {
+              const topWidthPercent = parseInt(topStyle.split(":")[1].trim());
+              expect(topWidthPercent).to.be.lessThan(bottomWidthPercent);
+            });
+        });
+    });
+  });
 });
 
