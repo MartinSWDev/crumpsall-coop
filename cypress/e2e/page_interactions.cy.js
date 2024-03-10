@@ -9,7 +9,6 @@ describe("Page Interactions", () => {
     it("Toggles the dropdown menu visibility on button click", () => {
       cy.get("#dropdownButton").click();
       cy.get("#dropdownMenu").should("not.have.class", "hidden");
-
       cy.get("#dropdownButton").click();
       cy.get("#dropdownMenu").should("have.class", "hidden");
     });
@@ -55,7 +54,6 @@ describe("Page Interactions", () => {
         .first()
         .then(($section) => {
           const sectionName = $section.find("h2").text();
-
           cy.wrap($section).scrollIntoView({ duration: 500 });
           cy.get("#dropdown p").should("have.text", sectionName);
         });
@@ -66,7 +64,6 @@ describe("Page Interactions", () => {
         .last()
         .then(($section) => {
           const sectionName = $section.find("h2").text();
-
           cy.wrap($section).scrollIntoView({ duration: 500 });
           cy.get("#dropdown p").should("have.text", sectionName);
         });
@@ -78,7 +75,6 @@ describe("Page Interactions", () => {
         .then(($section) => {
           const lastSectionName = $section.find("h2").text();
           cy.wrap($section).scrollIntoView({ duration: 500 });
-
           cy.get("section:not(main section)")
             .last()
             .scrollIntoView({ duration: 500 });
@@ -94,6 +90,45 @@ describe("Page Interactions", () => {
     });
   });
 
-  // * progress bar
+  describe("Progress Bar", () => {
+    // it("updates the progress bar as the main content is scrolled through", () => {
+    //   let initialProgress;
+    //   cy.get("#progressBar")
+    //     .invoke("width")
+    //     .then((width) => {
+    //       initialProgress = width;
+    //     });
+    //   cy.get("main").scrollTo("bottom");
+    //   cy.get("#progressBar")
+    //     .invoke("width")
+    //     .should((width) => {
+    //       expect(width).to.be.greaterThan(initialProgress);
+    //     });
+    // });
+    // it("does not increase progress once the bottom of main is reached", () => {
+    //   cy.get("main").scrollTo("bottom");
+    //   cy.get("#progressBar").invoke("width").as("bottomProgress");
+    //   cy.window().scrollTo("bottom");
+    //   cy.get("@bottomProgress").then((bottomProgress) => {
+    //     cy.get("#progressBar")
+    //       .invoke("width")
+    //       .should((width) => {
+    //         expect(width).to.eq(bottomProgress);
+    //       });
+    //   });
+    // });
+    // it("decreases progress when scrolling back up the main content", () => {
+    //   cy.get("main").scrollTo("bottom");
+    //   cy.get("#progressBar").invoke("width").as("bottomProgress");
+    //   cy.get("main").scrollTo("top");
+    //   cy.get("@bottomProgress").then((bottomProgress) => {
+    //     cy.get("#progressBar")
+    //       .invoke("width")
+    //       .should((width) => {
+    //         expect(width).to.be.lessThan(bottomProgress);
+    //       });
+    //   });
+    // });
+  });
 });
 
