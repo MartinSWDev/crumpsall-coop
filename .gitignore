@@ -1,4 +1,9 @@
-cypress
+cypress/examples/*
+cypress/fixtures/*
+cypress/support/*
+cypress/screenshots/*
+cypress/downloads/*
+
 package-lock.json
 task.md
 

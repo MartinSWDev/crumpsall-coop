@@ -9,12 +9,15 @@
   <body class="">
     <header class="h-[90vh] flex flex-col">
       <section id="hero" class="bg-slate-300 h-full"></section>
-      <div class="flex justify-between items-center py-4 px-16 bg-gray-200">
-        <p>Section</p>
-        <button class="">Show</button>
-      </div>
     </header>
-    <nav class="bg-neutral-500">
+    <div
+      id="dropdown"
+      class="sticky top-0 z-50 flex w-full justify-between items-center h-[4vh] py-4 px-16 bg-gray-200 transition-opacity duration-300 ease-in-out"
+    >
+      <p>About</p>
+      <button id="dropdownButton" class="cursor-pointer">Show</button>
+    </div>
+    <nav id="dropdownMenu" class="sticky top-14 z-50 hidden bg-neutral-500">
       <ul class="grid grid-cols-3 gap-4 px-16">
         <li><a href="#about" class="block py-4">About</a></li>
         <li><a href="#get-involved" class="block py-4">Get involved</a></li>
@@ -23,37 +26,38 @@
         <li><a href="#contact" class="block py-4">Contact</a></li>
       </ul>
     </nav>
-    <main>
-      <section id="about" class="bg-slate-700 h-96 mb-8">
+    <main class="relative">
+      <section id="about" class="bg-slate-700 h-[70vh] my-4">
         <h2 class="pl-16 pt-8 text-4xl">About</h2>
       </section>
-      <section id="get-involved" class="bg-slate-600 h-96 mb-8">
+      <section id="get-involved" class="bg-slate-600 h-[70vh] my-4">
         <h2 class="pl-16 pt-8 text-4xl">Get Involved</h2>
       </section>
-      <section id="progress" class="bg-slate-500 h-96 mb-8">
+      <section id="progress" class="bg-slate-500 h-[70vh] my-4">
         <h2 class="pl-16 pt-8 text-4xl">Progress</h2>
       </section>
-      <section id="faq" class="bg-slate-400 h-96 mb-8">
+      <section id="faq" class="bg-slate-400 h-[70vh] my-4">
         <h2 class="pl-16 pt-8 text-4xl">Frequently Asked Questions</h2>
       </section>
-      <section id="contact" class="bg-slate-300 h-96 mb-8">
+      <section id="contact" class="bg-slate-300 h-[70vh] my-4">
         <h2 class="pl-16 pt-8 text-4xl">Contact</h2>
       </section>
     </main>
 
-    <section id="gallery" class="bg-slate-200 h-96 mb-8">
+    <section id="gallery" class="bg-slate-200 h-[60vh] my-4">
       <h2 class="pl-16 pt-8 text-4xl">Gallery</h2>
     </section>
 
-    <section id="testimonials" class="bg-slate-100 h-96 mb-8">
+    <section id="testimonials" class="bg-slate-100 h-[60vh] my-4">
       <h2 class="pl-16 pt-8 text-4xl">Testimonials</h2>
     </section>
 
-    <footer id="footer" class="bg-slate-300 h-60">
+    <footer id="footer" class="bg-slate-300 h-2/6">
       <!--  Links  -->
       <!--  Socials  -->
       <!--  Contact  -->
     </footer>
+    <script src="./js/nav.js"></script>
   </body>
 </html>
 
