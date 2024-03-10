@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const dropdownButton = document.getElementById("dropdownButton");
   const dropdownMenu = document.getElementById("dropdownMenu");
   const dropdownLinks = document.querySelectorAll("#dropdownMenu a");
+  const dropdownP = document.querySelector("#dropdown p");
   // Nav selectors
   const main = document.querySelector("main");
   const dropdownDiv = document.getElementById("dropdown");
@@ -15,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   dropdownLinks.forEach((link) => {
     link.addEventListener("click", () => {
+      console.log(link.textContent);
       const isHidden = dropdownMenu.classList.toggle("hidden");
       dropdownButton.textContent = isHidden ? "Show" : "Hide";
     });
@@ -37,17 +39,23 @@ document.addEventListener("DOMContentLoaded", () => {
   // Section name display
   const observer = new IntersectionObserver(
     (entries) => {
-      entries.sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-      const topIntersectingEntry = entries[0];
+      const intersectingEntries = entries.filter(
+        (entry) => entry.isIntersecting
+      );
+      intersectingEntries.sort(
+        (a, b) => a.boundingClientRect.top - b.boundingClientRect.top
+      );
 
-      if (topIntersectingEntry && topIntersectingEntry.isIntersecting) {
-        document.querySelector("#dropdown p").textContent =
+      if (intersectingEntries.length > 0) {
+        const topIntersectingEntry = intersectingEntries[0];
+        dropdownP.textContent =
           topIntersectingEntry.target.querySelector("h2").textContent;
       }
     },
     {
       root: null,
-      threshold: 1,
+      threshold: 0.2,
+      rootMargin: "0px 30% -50% 0px",
     }
   );
   mainSections.forEach((section) => observer.observe(section));

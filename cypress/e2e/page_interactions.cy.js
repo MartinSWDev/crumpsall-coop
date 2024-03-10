@@ -14,14 +14,14 @@ describe("Page Interactions", () => {
       cy.get("#dropdownMenu").should("have.class", "hidden");
     });
 
-    // it("Navigates to the correct section on link click and menu closes", () => {
-    //   cy.get("#dropdownButton").click();
-    //   cy.get("#dropdownMenu").should("not.have.class", "hidden");
-    //   cy.get("#progress").click();
-    //   cy.url().should("include", "#progress");
-    //   cy.get("#progress").should("be.visible");
-    //   cy.get("#dropdownMenu").should("have.class", "hidden");
-    // });
+    it("Navigates to the correct section on link click and menu closes", () => {
+      cy.get("#dropdownButton").click();
+      cy.get("#dropdownMenu").should("not.have.class", "hidden");
+      cy.get("#dropdownMenu ul li a[href='#progress']").click();
+      cy.url().should("include", "#progress");
+      cy.get("#progress").should("be.visible");
+      cy.get("#dropdownMenu").should("have.class", "hidden");
+    });
   });
 
   describe("Sticky Navbar", () => {
@@ -87,10 +87,11 @@ describe("Page Interactions", () => {
         });
     });
 
-    // it("Displays the correct section name in the dropdown when navlink is clicked", () => {
-    //   cy.get("#dropdownMenu ul li a[href='#faq']").click();
-    //   cy.get("#dropdown p").should("have.text", "Frequently Asked Questions");
-    // });
+    it("Displays the correct section name in the dropdown when navlink is clicked", () => {
+      cy.get("#dropdownButton").click();
+      cy.get("#dropdownMenu ul li a[href='#faq']").click();
+      cy.get("#dropdown p").should("have.text", "Frequently Asked Questions");
+    });
   });
 
   // * progress bar
