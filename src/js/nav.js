@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const main = document.querySelector("main");
   const dropdownDiv = document.getElementById("dropdown");
   const mainSections = document.querySelectorAll("main section");
+  // Progress bar selectors
+  const progressBar = document.getElementById("progressBar");
 
   // Dropdown toggle
   dropdownButton.addEventListener("click", () => {
@@ -59,5 +61,26 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   );
   mainSections.forEach((section) => observer.observe(section));
+
+  // Progress bar on scroll
+  function updateProgressBar() {
+    const mainTop = main.offsetTop;
+    const mainBottom = mainTop + main.offsetHeight;
+    const windowHeight = window.innerHeight;
+    const scrollY = window.scrollY;
+    const start = mainTop - windowHeight;
+    const end = mainBottom - windowHeight + mainTop;
+
+    let progressPercentage = 0;
+    if (scrollY > start) {
+      progressPercentage = ((scrollY - start) / (end - start)) * 100;
+    }
+
+    progressPercentage = Math.max(0, Math.min(100, progressPercentage));
+    progressBar.style.width = `${progressPercentage}%`;
+  }
+
+  window.addEventListener("scroll", updateProgressBar);
+  window.addEventListener("resize", updateProgressBar);
 });
 
