@@ -17,10 +17,14 @@ document.addEventListener("DOMContentLoaded", () => {
   dropdownButton.addEventListener("click", () => {
     toggleBrickAnimation();
     dropdownMenu.classList.toggle("hidden");
+    const isPressed = dropdownButton.getAttribute("aria-pressed") === "true";
+    dropdownButton.setAttribute("aria-pressed", !isPressed);
   });
   dropdownLinks.forEach((link) => {
     link.addEventListener("click", () => {
-      const isHidden = dropdownMenu.classList.toggle("hidden");
+      dropdownMenu.classList.toggle("hidden");
+      const isPressed = dropdownButton.getAttribute("aria-pressed") === "true";
+      dropdownButton.setAttribute("aria-pressed", !isPressed);
       // dropdownButton.textContent = isHidden ? "Show" : "Hide";
     });
   });
