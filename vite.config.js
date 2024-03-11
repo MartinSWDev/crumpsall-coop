@@ -1,11 +1,10 @@
 export default {
-  root: "./",
+  root: "src",
   server: {
     port: 5173,
   },
   build: {
-    emptyOutDir: true,
-    outDir: "./dist",
+    outDir: "../dist",
     rollupOptions: {
       output: {
         entryFileNames: "[name].js",
