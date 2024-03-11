@@ -6,6 +6,7 @@ cypress/downloads/*
 
 package-lock.json
 task.md
+notes.md
 
 # Logs
 logs
