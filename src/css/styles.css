@@ -10,3 +10,22 @@ section {
   scroll-margin-top: 64px;
 }
 
+.swiper {
+  width: 100%;
+  max-width: 100%;
+}
+
+@media screen and (min-width: 640px) {
+  .swiper {
+    max-width: 60%;
+  }
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

@@ -1,3 +1,5 @@
+import toggleBrickAnimation from "./gsap.js";
+
 document.addEventListener("DOMContentLoaded", () => {
   // Dropdown selectors
   const dropdownButton = document.getElementById("dropdownButton");
@@ -13,14 +15,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Dropdown toggle
   dropdownButton.addEventListener("click", () => {
-    const isHidden = dropdownMenu.classList.toggle("hidden");
-    dropdownButton.textContent = isHidden ? "Show" : "Hide";
+    toggleBrickAnimation();
+    dropdownMenu.classList.toggle("hidden");
   });
   dropdownLinks.forEach((link) => {
     link.addEventListener("click", () => {
-      console.log(link.textContent);
       const isHidden = dropdownMenu.classList.toggle("hidden");
-      dropdownButton.textContent = isHidden ? "Show" : "Hide";
+      // dropdownButton.textContent = isHidden ? "Show" : "Hide";
     });
   });
 

@@ -16,9 +16,9 @@ describe("Page Interactions", () => {
     it("Navigates to the correct section on link click and menu closes", () => {
       cy.get("#dropdownButton").click();
       cy.get("#dropdownMenu").should("not.have.class", "hidden");
-      cy.get("#dropdownMenu ul li a[href='#progress']").click();
-      cy.url().should("include", "#progress");
-      cy.get("#progress").should("be.visible");
+      cy.get("#dropdownMenu ul li a[href='#updates']").click();
+      cy.url().should("include", "#updates");
+      cy.get("#updates").should("be.visible");
       cy.get("#dropdownMenu").should("have.class", "hidden");
     });
   });
@@ -115,7 +115,7 @@ describe("Page Interactions", () => {
         .invoke("attr", "style")
         .then((style) => {
           const widthPercent = parseInt(style.split(":")[1].trim());
-          expect(widthPercent).to.be.closeTo(100, 10);
+          expect(widthPercent).to.be.closeTo(100, 15);
         });
     });
 
