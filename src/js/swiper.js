@@ -5,9 +5,16 @@ const swiper = new Swiper(".swiper-container", {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
+  a11y: {
+    enabled: true,
+    prevSlideMessage: "Previous slide",
+    nextSlideMessage: "Next slide",
+    firstSlideMessage: "This is the first slide",
+    lastSlideMessage: "This is the last slide",
+  },
+  keyboard: {
+    enabled: true,
+    onlyInViewport: true,
   },
 });
 
