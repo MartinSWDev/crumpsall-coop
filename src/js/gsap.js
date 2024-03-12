@@ -50,24 +50,12 @@ export default function toggleBrickAnimation() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Example animation for the spline canvas
-  // gsap.to("#canvas3d", {
-  //   scrollTrigger: {
-  //     trigger: "#hero",
-  //     start: "top top",
-  //     end: "bottom bottom",
-  //     scrub: true,
-  //     markers: true,
-  //   },
-  //   opacity: 1,
-  // });
-
   // Animation for the text to fade in to full opacity
   gsap.to("h1, h2", {
     scrollTrigger: {
       trigger: "#hero",
       start: "top top",
-      end: "bottom top",
+      end: "bottom 25%",
       scrub: true,
     },
     opacity: 1,
