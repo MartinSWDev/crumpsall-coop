@@ -13,23 +13,64 @@ document.addEventListener("DOMContentLoaded", () => {
   // Progress bar selectors
   const progressBar = document.getElementById("progressBar");
 
-  // Dropdown toggle
-  dropdownButton.addEventListener("click", () => {
-    toggleBrickAnimation();
-    dropdownMenu.classList.toggle("hidden");
-    const isPressed = dropdownButton.getAttribute("aria-pressed") === "true";
-    dropdownButton.setAttribute("aria-pressed", !isPressed);
+  // set initial values on dropdown menu to avoid lag from tailwind and gsap
+  gsap.set(dropdownMenu, {
+    scaleY: 0,
+    autoAlpha: 0,
+    transformOrigin: "top",
   });
+
+  // Dropdown animation Timeline
+  const dropdownTL = gsap
+    .timeline({
+      paused: true,
+      reversed: true,
+      onStart: () => {
+        dropdownMenu.classList.remove("hidden");
+        dropdownMenu.style.visibility = "visible";
+      },
+      onReverseComplete: () => {
+        dropdownMenu.classList.add("hidden");
+        dropdownMenu.style.visibility = "hidden";
+      },
+    })
+    .to(dropdownMenu, { scaleY: 1, duration: 0.3, ease: "none" }, 0)
+    .fromTo(
+      dropdownMenu,
+      { opacity: 0 },
+      { opacity: 1, duration: 0.3, ease: "none" },
+      0
+    );
+
+  // Dropdown toggle
+  dropdownButton.addEventListener("click", (event) => {
+    event.preventDefault();
+    toggleBrickAnimation();
+
+    if (dropdownTL.reversed()) {
+      dropdownTL.play();
+    } else {
+      dropdownTL.reverse();
+    }
+
+    const isPressed = dropdownButton.getAttribute("aria-pressed") === "true";
+    dropdownButton.setAttribute("aria-pressed", String(!isPressed));
+  });
+
+  // Dropdown close on link click
   dropdownLinks.forEach((link) => {
     link.addEventListener("click", () => {
-      dropdownMenu.classList.toggle("hidden");
-      const isPressed = dropdownButton.getAttribute("aria-pressed") === "true";
-      dropdownButton.setAttribute("aria-pressed", !isPressed);
-      // dropdownButton.textContent = isHidden ? "Show" : "Hide";
+      if (!dropdownTL.reversed()) {
+        toggleBrickAnimation();
+        dropdownTL.reverse().eventCallback("onReverseComplete", () => {
+          dropdownMenu.classList.add("hidden");
+          dropdownButton.setAttribute("aria-pressed", "false");
+        });
+      }
     });
   });
 
-  // Navbar sticky over main
+  // Dropdown menu position
   window.addEventListener("scroll", function () {
     const mainRect = main.getBoundingClientRect();
     const mainBottom = mainRect.bottom + window.scrollY - 56;
@@ -55,8 +96,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (intersectingEntries.length > 0) {
         const topIntersectingEntry = intersectingEntries[0];
-        dropdownP.textContent =
-          topIntersectingEntry.target.querySelector("h2").textContent;
+        dropdownP.textContent = topIntersectingEntry.target
+          .querySelector("h2")
+          .textContent.trim();
       }
     },
     {

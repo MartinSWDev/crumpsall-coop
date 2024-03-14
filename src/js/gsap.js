@@ -1,66 +1,52 @@
 gsap.registerPlugin(ScrollTrigger);
 
-// Hamburger animation
+// Timeline to handle brick animation and dropdown
 let isX = false;
-export default function toggleBrickAnimation() {
-  if (!isX) {
-    isX = true;
-    gsap.to("#row2, #row4", {
-      duration: 0.5,
-      opacity: 0,
-      ease: "power1.out",
-    });
-    gsap.to("#row1", {
-      duration: 0.5,
+
+const tl = gsap.timeline({ paused: true });
+tl.to("#row2, #row4", { opacity: 0, ease: "power1.out", duration: 0.5 })
+  .to(
+    "#row1",
+    {
       rotation: 45,
       y: "+=30",
       transformOrigin: "center center",
       ease: "power1.inOut",
-    });
-    gsap.to("#row3", {
       duration: 0.5,
+    },
+    0
+  )
+  .to(
+    "#row3",
+    {
       rotation: -45,
       y: "-=4",
       transformOrigin: "center center",
       ease: "power1.inOut",
-    });
+      duration: 0.5,
+    },
+    0
+  );
+
+export default function toggleBrickAnimation() {
+  if (!isX) {
+    tl.play();
   } else {
-    isX = false;
-    gsap.to("#row2, #row4", {
-      duration: 0.5,
-      opacity: 1,
-      ease: "power1.out",
-      display: "block",
-    });
-    gsap.to("#row1", {
-      duration: 0.5,
-      rotation: 0,
-      y: "-=30",
-      transformOrigin: "center center",
-      ease: "power1.inOut",
-    });
-    gsap.to("#row3", {
-      duration: 0.5,
-      rotation: 0,
-      y: "+=4",
-      transformOrigin: "center center",
-      ease: "power1.inOut",
-    });
+    tl.reverse();
   }
+  isX = !isX;
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  // Animation for the text to fade in to full opacity
-  gsap.to("h1, h2", {
-    scrollTrigger: {
-      trigger: "#hero",
-      start: "top top",
-      end: "bottom 25%",
-      scrub: true,
-    },
-    opacity: 1,
-    duration: 1,
-    stagger: 0.5,
-  });
+// Animation for the text to fade in to full opacity
+gsap.to("h1, h2", {
+  scrollTrigger: {
+    trigger: "#hero",
+    start: "top top",
+    end: "bottom center",
+    scrub: true,
+  },
+  opacity: 1,
+  duration: 1,
+  stagger: 0.5,
 });
 
