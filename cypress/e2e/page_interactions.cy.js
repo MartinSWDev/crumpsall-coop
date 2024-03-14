@@ -55,7 +55,7 @@ describe("Page Interactions", () => {
         .then(($section) => {
           const sectionName = $section.find("h2").text();
           cy.wrap($section).scrollIntoView({ duration: 500 });
-          cy.get("#dropdown p").should("have.text", sectionName);
+          cy.get("#dropdown p").should("have.text", sectionName.trim());
         });
     });
 
@@ -65,7 +65,7 @@ describe("Page Interactions", () => {
         .then(($section) => {
           const sectionName = $section.find("h2").text();
           cy.wrap($section).scrollIntoView({ duration: 500 });
-          cy.get("#dropdown p").should("have.text", sectionName);
+          cy.get("#dropdown p").should("have.text", sectionName.trim());
         });
     });
 
@@ -78,7 +78,7 @@ describe("Page Interactions", () => {
           cy.get("section:not(main section)")
             .last()
             .scrollIntoView({ duration: 500 });
-          cy.get("#dropdown p").should("have.text", lastSectionName);
+          cy.get("#dropdown p").should("have.text", lastSectionName.trim());
           cy.get("#dropdown").should("not.be.visible");
         });
     });
