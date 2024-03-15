@@ -1,3 +1,5 @@
+// card swiper setup for all swipers
+// might need seperating ?
 const swiper = new Swiper('.swiper-container', {
     direction: 'horizontal',
     loop: true,

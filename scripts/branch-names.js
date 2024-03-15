@@ -11,10 +11,8 @@ const isValid = validBranchPrefixes.some((prefix) =>
 )
 
 if (!isExcluded && !isValid) {
-    console.error(`Invalid branch name: ${branchName}`)
-    console.error(
-        'Branch name must start with one of the following prefixes:',
-        validBranchPrefixes.join(', ')
-    )
+    console.error(`Invalid branch name: ${branchName}
+Branch name must start with one of the following prefixes:
+${validBranchPrefixes.join(', ')}`)
     process.exit(1)
 }
