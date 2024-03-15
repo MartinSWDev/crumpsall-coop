@@ -8,12 +8,12 @@ This project is developed using modern web technologies and tooling to ensure a 
 
 ### Technologies Used
 
-- **Vite**: For fast development environment setup and efficient build process.
-- **Tailwind CSS**: For styling with a utility-first CSS framework.
-- **Cypress**: For end-to-end testing to ensure the site functions correctly for users.
-- **Jest**: For unit testing to maintain code quality and prevent regressions. (Unused at present)
-- **Husky**: For managing Git hooks to enforce commit standards.
-- **@splinetool/runtime**: For integrating Spline 3D animations seamlessly into the web experience.
+-   **Vite**: For fast development environment setup and efficient build process.
+-   **Tailwind CSS**: For styling with a utility-first CSS framework.
+-   **Cypress**: For end-to-end testing to ensure the site functions correctly for users.
+-   **Jest**: For unit testing to maintain code quality and prevent regressions. (Unused at present)
+-   **Husky**: For managing Git hooks to enforce commit standards.
+-   **@splinetool/runtime**: For integrating Spline 3D animations seamlessly into the web experience.
 
 ### Getting Started
 
@@ -47,23 +47,22 @@ npm run build
 
 This project uses Jest for unit testing and Cypress for end-to-end testing. You can run tests using the following commands:
 
-- **Unit Tests**:
+-   **Unit Tests**:
 
-  ```sh
-  npm run test:unit
-  ```
+    ```sh
+    npm run test:unit
+    ```
 
-- **End-to-End Tests**:
-  - Run in the terminal:
-    ```sh
-    npm run test:e2e
-    ```
-  - Open Cypress Test Runner:
-    ```sh
-    npm run test:e2e:open
-    ```
+-   **End-to-End Tests**:
+    -   Run in the terminal:
+        ```sh
+        npm run test:e2e
+        ```
+    -   Open Cypress Test Runner:
+        ```sh
+        npm run test:e2e:open
+        ```
 
 ## Contact
 
 For any inquiries, you can reach out to Martin at martinsoftwaredev@outlook.com.
-

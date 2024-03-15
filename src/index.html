@@ -1,735 +1,824 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Join the Crumpsall Community Co-operative effort to revitalize and sustain the Crumpsall Community Hall. Learn how you can contribute to our community's future."
-    />
-    <meta
-      name="keywords"
-      content="Crumpsall, Community, Co-operative, Volunteer, Support, Local, Initiative"
-    />
-    <meta name="author" content="Crumpsall Community Co-operative" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./assets/images/favicon.ico"
-    />
-    <title>Crumpsall Community Co-operative</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-    <link rel="stylesheet" href="./css/styles.css" />
-  </head>
-  <body class="bg-base-cream text-dark-green">
-    <header
-      id="hero"
-      class="relative flex flex-col lg:flex-row items-center lg:items-stretch h-[75vh] md:h-[75vh] lg:h-[85vh] mb-16 md:mb-0"
-    >
-      <div
-        class="w-full lg:w-1/3 xl:w-1/2 flex flex-col justify-center p-8 mt-16 md:mt-0"
-      >
-        <h1
-          class="text-4xl sm:text-6xl md:text-6xl lg:text-5xl xl:text-8xl font-bold opacity-50"
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Join the Crumpsall Community Co-operative effort to revitalize and sustain the Crumpsall Community Hall. Learn how you can contribute to our community's future."
+        />
+        <meta
+            name="keywords"
+            content="Crumpsall, Community, Co-operative, Volunteer, Support, Local, Initiative"
+        />
+        <meta name="author" content="Crumpsall Community Co-operative" />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./assets/images/favicon.ico"
+        />
+        <title>Crumpsall Community Co-operative</title>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+        />
+        <link rel="stylesheet" href="./css/styles.css" />
+    </head>
+    <body class="bg-base-cream text-dark-green">
+        <header
+            id="hero"
+            class="relative mb-16 flex h-[75vh] flex-col items-center md:mb-0 md:h-[75vh] lg:h-[85vh] lg:flex-row lg:items-stretch"
         >
-          Crumpsall Community <br />Co-operative
-        </h1>
-        <h2 class="text-2xl lg:text-4xl mt-16 opacity-0">Community Spirit.</h2>
-        <h2 class="text-2xl lg:text-4xl mt-16 opacity-0">
-          Collective Strength.
-        </h2>
-      </div>
-      <div
-        class="w-full lg:w-2/3 h-1/2 lg:h-full xl-w-1/2 z-50 flex justify-center items-center"
-      >
-        <canvas
-          id="canvas3d"
-          aria-label="Interactive canvas displaying community cooperative graphics."
-          class="w-full h-full object-contain"
-        ></canvas>
-      </div>
-    </header>
-    <div
-      id="dropdown"
-      class="sticky top-0 z-50 bg-dark-green text-base-cream font-bold transition-opacity duration-300 ease-in-out"
-    >
-      <div class="flex justify-between items-center py-4 px-16">
-        <p>About Us</p>
-        <button
-          id="dropdownButton"
-          class="cursor-pointer"
-          aria-label="Toggle Navigation Menu"
-          aria-pressed="false"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            width="30"
-            zoomAndPan="magnify"
-            viewBox="0 0 75 75"
-            height="30"
-            preserveAspectRatio="xMidYMid meet"
-            version="1.0"
-            aria-hidden="true"
-          >
-            <defs></defs>
-            <g id="row1">
-              <path
-                fill="#f2e8cf"
-                d="M 6.300781 5.902344 L 36.003906 5.902344 L 36.003906 17.199219 L 6.300781 17.199219 Z"
-                fill-opacity="1"
-              />
-              <path
-                fill="#f2e8cf"
-                d="M 39 5.902344 L 68.707031 5.902344 L 68.707031 17.199219 L 39 17.199219 Z"
-                fill-opacity="1"
-              />
-            </g>
-            <g id="row2">
-              <path
-                fill="#f2e8cf"
-                d="M 6.300781 23.199219 L 19.628906 23.199219 L 19.628906 34.5 L 6.300781 34.5 Z"
-                fill-opacity="1"
-              />
-              <path
-                fill="#f2e8cf"
-                d="M 22.648438 23.199219 L 52.355469 23.199219 L 52.355469 34.5 L 22.648438 34.5 Z"
-                fill-opacity="1"
-              />
-              <path
-                fill="#f2e8cf"
-                d="M 55.351562 23.199219 L 68.679688 23.199219 L 68.679688 34.5 L 55.351562 34.5 Z"
-                fill-opacity="1"
-              />
-            </g>
-            <g id="row3">
-              <path
-                fill="#f2e8cf"
-                d="M 6.300781 40.5 L 36.003906 40.5 L 36.003906 51.800781 L 6.300781 51.800781 Z"
-                fill-opacity="1"
-              />
-              <path
-                fill="#f2e8cf"
-                d="M 39 40.5 L 68.707031 40.5 L 68.707031 51.800781 L 39 51.800781 Z"
-                fill-opacity="1"
-              />
-            </g>
-            <g id="row4">
-              <path
-                fill="#f2e8cf"
-                d="M 6.300781 57.800781 L 19.628906 57.800781 L 19.628906 69.097656 L 6.300781 69.097656 Z"
-                fill-opacity="1"
-              />
-              <path
-                fill="#f2e8cf"
-                d="M 22.648438 57.800781 L 52.355469 57.800781 L 52.355469 69.097656 L 22.648438 69.097656 Z"
-                fill-opacity="1"
-              />
-              <path
-                fill="#f2e8cf"
-                d="M 55.351562 57.800781 L 68.679688 57.800781 L 68.679688 69.097656 L 55.351562 69.097656 Z"
-                fill-opacity="1"
-              />
-            </g>
-          </svg>
-          <span class="sr-only">Toggle Navigation</span>
-        </button>
-      </div>
-      <div class="w-full">
-        <div
-          id="progressBar"
-          class="bg-light-green h-2"
-          style="width: 0%"
-        ></div>
-      </div>
-    </div>
-    <nav
-      id="dropdownMenu"
-      class="sticky top-[4.3em] z-50 hidden text-base-cream bg-accent-red font-bold transform origin-top scale-y-0 transition-transform ease-in-out"
-      aria-label="Main navigation menu"
-    >
-      <ul class="grid grid-cols-3 gap-4 px-16">
-        <li><a href="#about" class="block py-4">About Us</a></li>
-        <li><a href="#get-involved" class="block py-4">Get involved</a></li>
-        <li><a href="#updates" class="block py-4">Updates</a></li>
-        <li><a href="#faq" class="block py-4">FAQ</a></li>
-        <li><a href="#contact" class="block py-4">Contact</a></li>
-      </ul>
-    </nav>
-    <main class="relative">
-      <section
-        id="about"
-        class="min-h-[50vh] items-center flex flex-col justify-center my-8"
-        aria-labelledby="aboutUsHeading"
-      >
-        <h2 class="text-4xl lg:text-6xl font-bold my-8" id="aboutUsHeading">
-          About Us
-        </h2>
-        <picture class="flex flex-col items-center h-full">
-          <source srcset="./assets/images/hall.webp" type="image/webp" />
-          <source srcset="./assets/images/hall.jpg" type="image/jpeg" />
-          <img
-            src="./assets/images/hall.jpg"
-            alt="Crumpsall Community Hall with cherry blossom trees in the left foreground"
-            class="object-cover w-1/2 h-1/2 mb-4 rounded-lg shadow-lg"
-            height="100%"
-            width="100%"
-          />
-        </picture>
-        <div class="mx-8 md:w-1/2 xl:1/4">
-          <p class="font-bold text-2xl lg:text-4xl my-2 text-left">
-            Welcome to the beginning of a community-driven journey to revitalize
-            Crumpsall Community Hall.
-          </p>
-          <br />
-          <p class="mb-2 lg:text-xl">
-            As we stand at the threshold of this exciting venture, we're
-            exploring the potential of establishing a co-operative model
-            dedicated to the repair and sustainable operation of this cherished
-            community asset.
-          </p>
-          <p class="mb-2 lg:text-xl">
-            Crumpsall Community Hall has been a cornerstone of our neighborhood,
-            hosting countless events and memories. However, to continue its
-            legacy, it needs our collective effort and care. The idea of a
-            co-operative presents a unique opportunity for community ownership
-            and involvement, ensuring the hall serves and represents the
-            interests of Crumpsall's residents.
-          </p>
-          <p class="mb-2 lg:text-xl">
-            This initiative is still in its infancy, and we believe that the
-            foundation of its success lies in the diverse contributions of our
-            community members. Whether it's offering time, skills, resources, or
-            moral support, every bit of assistance is invaluable.
-          </p>
-          <p class="mb-2 lg:text-xl">
-            We're eager to hear from anyone interested in joining this
-            exploratory phase. Your ideas, suggestions, and involvement could
-            help shape the future of the Crumpsall Community Hall and, by
-            extension, our community at large.
-          </p>
-        </div>
-      </section>
-      <section
-        id="get-involved"
-        class="bg-dark-green min-h-[70vh] my-8 flex flex-col items-center"
-        aria-labelledby="getInvolvedHeading"
-      >
-        <h2
-          class="text-4xl lg:text-6xl font-bold text-base-cream my-8"
-          id="getInvolvedHeading"
-        >
-          Get Involved
-        </h2>
-        <div class="mx-8 text-base-cream md:w-1/2 xl:1/4">
-          <p class="mb-2 lg:text-xl">
-            Crumpsall Community Co-operative is more than a project; it's a
-            movement towards creating a sustainable future for the Crumpsall
-            Community Hall, powered by the strength and spirit of our local
-            community.
-          </p>
-          <p
-            class="font-bold text-2xl mb-2 lg:text-3xl italic my-4 ml-4 text-left"
-          >
-            Your involvement can make a significant difference.
-          </p>
-          <p class="mb-2 lg:text-xl">
-            We are calling on all community members who share our vision for a
-            revitalized, vibrant Crumpsall Community Hall to come forward.
-            Whether you can offer time, skills, resources, or simply your voice
-            in support, there's a place for you in this endeavor.
-          </p>
-          <h3 class="my-2 text-xl mb-2 lg:text-2xl font-bold">
-            How You Can Help
-          </h3>
-          <ul class="mb-2 lg:text-xl text-left">
-            <li class="mb-2">
-              <i
-                class="fa-solid fa-leaf"
-                style="color: #a7c957"
-                aria-hidden="true"
-              ></i>
-              Volunteer: Lend your hands and hearts in various capacities, from
-              repair work to event organization.
-            </li>
-            <li class="mb-2">
-              <i
-                class="fa-solid fa-leaf"
-                style="color: #a7c957"
-                aria-hidden="true"
-              ></i>
-              Donate: Financial contributions help fund renovations, programs,
-              and maintenance of the hall.
-            </li>
-            <li class="mb-2">
-              <i
-                class="fa-solid fa-leaf"
-                style="color: #a7c957"
-                aria-hidden="true"
-              ></i>
-              Spread the Word: Amplify our cause by sharing it within your
-              network and on social media.
-            </li>
-            <li class="mb-2">
-              <i
-                class="fa-solid fa-leaf"
-                style="color: #a7c957"
-                aria-hidden="true"
-              ></i>
-              Participate: Attend events, meetings, and workshops to stay
-              informed and involved.
-            </li>
-          </ul>
-          <p class="mb-2 lg:text-xl">
-            Every action, no matter the size, propels us closer to our goal.
-            Together, we can transform Crumpsall Community Hall into a thriving
-            hub of activity, culture, and connection.
-          </p>
-          <button
-            class="bg-accent-red text-white font-bold py-2 px-4 rounded-lg my-8"
-            onclick="window.location.href='#contact';"
-            aria-label="Navigate to Contact Section"
-          >
-            Get Involved
-          </button>
-        </div>
-      </section>
-      <section
-        id="updates"
-        class="min-h-[70vh] flex flex-col items-center my-8"
-        aria-labelledby="updatesHeading"
-      >
-        <h2 id="updatesHeading" class="text-4xl lg:text-6xl font-bold my-8">
-          Updates
-        </h2>
-        <div
-          class="swiper"
-          role="region"
-          aria-roledescription="carousel"
-          aria-label="Updates"
-        >
-          <div class="swiper-container">
-            <div class="swiper-wrapper">
-              <div
-                class="swiper-slide"
-                role="group"
-                aria-label="Update 1: Business Support Approved"
-              >
-                <div
-                  class="max-w-sm bg-dark-green text-base-cream rounded-lg shadow-md"
+            <div
+                class="mt-16 flex w-full flex-col justify-center p-8 md:mt-0 lg:w-1/3 xl:w-1/2"
+            >
+                <h1
+                    class="text-4xl font-bold opacity-50 sm:text-6xl md:text-6xl lg:text-5xl xl:text-8xl"
                 >
-                  <picture class="flex flex-col items-center">
+                    Crumpsall Community <br />Co-operative
+                </h1>
+                <h2 class="mt-16 text-2xl opacity-0 lg:text-4xl">
+                    Community Spirit.
+                </h2>
+                <h2 class="mt-16 text-2xl opacity-0 lg:text-4xl">
+                    Collective Strength.
+                </h2>
+            </div>
+            <div
+                class="xl-w-1/2 z-50 flex h-1/2 w-full items-center justify-center lg:h-full lg:w-2/3"
+            >
+                <canvas
+                    id="canvas3d"
+                    aria-label="Interactive canvas displaying community cooperative graphics."
+                    class="h-full w-full object-contain"
+                ></canvas>
+            </div>
+        </header>
+        <div
+            id="dropdown"
+            class="sticky top-0 z-50 bg-dark-green font-bold text-base-cream transition-opacity duration-300 ease-in-out"
+        >
+            <div class="flex items-center justify-between px-16 py-4">
+                <p>About Us</p>
+                <button
+                    id="dropdownButton"
+                    class="cursor-pointer"
+                    aria-label="Toggle Navigation Menu"
+                    aria-pressed="false"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        width="30"
+                        zoomAndPan="magnify"
+                        viewBox="0 0 75 75"
+                        height="30"
+                        preserveAspectRatio="xMidYMid meet"
+                        version="1.0"
+                        aria-hidden="true"
+                    >
+                        <defs></defs>
+                        <g id="row1">
+                            <path
+                                fill="#f2e8cf"
+                                d="M 6.300781 5.902344 L 36.003906 5.902344 L 36.003906 17.199219 L 6.300781 17.199219 Z"
+                                fill-opacity="1"
+                            />
+                            <path
+                                fill="#f2e8cf"
+                                d="M 39 5.902344 L 68.707031 5.902344 L 68.707031 17.199219 L 39 17.199219 Z"
+                                fill-opacity="1"
+                            />
+                        </g>
+                        <g id="row2">
+                            <path
+                                fill="#f2e8cf"
+                                d="M 6.300781 23.199219 L 19.628906 23.199219 L 19.628906 34.5 L 6.300781 34.5 Z"
+                                fill-opacity="1"
+                            />
+                            <path
+                                fill="#f2e8cf"
+                                d="M 22.648438 23.199219 L 52.355469 23.199219 L 52.355469 34.5 L 22.648438 34.5 Z"
+                                fill-opacity="1"
+                            />
+                            <path
+                                fill="#f2e8cf"
+                                d="M 55.351562 23.199219 L 68.679688 23.199219 L 68.679688 34.5 L 55.351562 34.5 Z"
+                                fill-opacity="1"
+                            />
+                        </g>
+                        <g id="row3">
+                            <path
+                                fill="#f2e8cf"
+                                d="M 6.300781 40.5 L 36.003906 40.5 L 36.003906 51.800781 L 6.300781 51.800781 Z"
+                                fill-opacity="1"
+                            />
+                            <path
+                                fill="#f2e8cf"
+                                d="M 39 40.5 L 68.707031 40.5 L 68.707031 51.800781 L 39 51.800781 Z"
+                                fill-opacity="1"
+                            />
+                        </g>
+                        <g id="row4">
+                            <path
+                                fill="#f2e8cf"
+                                d="M 6.300781 57.800781 L 19.628906 57.800781 L 19.628906 69.097656 L 6.300781 69.097656 Z"
+                                fill-opacity="1"
+                            />
+                            <path
+                                fill="#f2e8cf"
+                                d="M 22.648438 57.800781 L 52.355469 57.800781 L 52.355469 69.097656 L 22.648438 69.097656 Z"
+                                fill-opacity="1"
+                            />
+                            <path
+                                fill="#f2e8cf"
+                                d="M 55.351562 57.800781 L 68.679688 57.800781 L 68.679688 69.097656 L 55.351562 69.097656 Z"
+                                fill-opacity="1"
+                            />
+                        </g>
+                    </svg>
+                    <span class="sr-only">Toggle Navigation</span>
+                </button>
+            </div>
+            <div class="w-full">
+                <div
+                    id="progressBar"
+                    class="h-2 bg-light-green"
+                    style="width: 0%"
+                ></div>
+            </div>
+        </div>
+        <nav
+            id="dropdownMenu"
+            class="sticky top-[4.3em] z-50 hidden origin-top scale-y-0 transform bg-accent-red font-bold text-base-cream transition-transform ease-in-out"
+            aria-label="Main navigation menu"
+        >
+            <ul class="grid grid-cols-3 gap-4 px-16">
+                <li><a href="#about" class="block py-4">About Us</a></li>
+                <li>
+                    <a href="#get-involved" class="block py-4">Get involved</a>
+                </li>
+                <li><a href="#updates" class="block py-4">Updates</a></li>
+                <li><a href="#faq" class="block py-4">FAQ</a></li>
+                <li><a href="#contact" class="block py-4">Contact</a></li>
+            </ul>
+        </nav>
+        <main class="relative">
+            <section
+                id="about"
+                class="my-8 flex min-h-[50vh] flex-col items-center justify-center"
+                aria-labelledby="aboutUsHeading"
+            >
+                <h2
+                    class="my-8 text-4xl font-bold lg:text-6xl"
+                    id="aboutUsHeading"
+                >
+                    About Us
+                </h2>
+                <picture class="flex h-full flex-col items-center">
                     <source
-                      srcset="./assets/images/co-op-uk.webp"
-                      type="image/webp"
+                        srcset="./assets/images/hall.webp"
+                        type="image/webp"
                     />
                     <source
-                      srcset="./assets/images/co-op-uk.jpg"
-                      type="image/jpeg"
+                        srcset="./assets/images/hall.jpg"
+                        type="image/jpeg"
                     />
                     <img
-                      class="rounded-t-lg"
-                      src="./assets/images/co-op-uk.jpg"
-                      alt="Co-operatives UK Logo"
-                      height="100%"
-                      width="100%"
+                        src="./assets/images/hall.jpg"
+                        alt="Crumpsall Community Hall with cherry blossom trees in the left foreground"
+                        class="mb-4 h-1/2 w-1/2 rounded-lg object-cover shadow-lg"
+                        height="100%"
+                        width="100%"
                     />
-                  </picture>
-                  <div class="p-5">
-                    <h3 class="mb-2 text-2xl font-bold tracking-tight">
-                      Business Support Approved
-                    </h3>
-                    <p class="mb-3 font-normal">
-                      Co-operatives UK have kindly approved our application for
-                      5.5 days of business support as part of their Convert to a
-                      Co-op support package.
+                </picture>
+                <div class="xl:1/4 mx-8 md:w-1/2">
+                    <p class="my-2 text-left text-2xl font-bold lg:text-4xl">
+                        Welcome to the beginning of a community-driven journey
+                        to revitalize Crumpsall Community Hall.
                     </p>
-                  </div>
+                    <br />
+                    <p class="mb-2 lg:text-xl">
+                        As we stand at the threshold of this exciting venture,
+                        we're exploring the potential of establishing a
+                        co-operative model dedicated to the repair and
+                        sustainable operation of this cherished community asset.
+                    </p>
+                    <p class="mb-2 lg:text-xl">
+                        Crumpsall Community Hall has been a cornerstone of our
+                        neighborhood, hosting countless events and memories.
+                        However, to continue its legacy, it needs our collective
+                        effort and care. The idea of a co-operative presents a
+                        unique opportunity for community ownership and
+                        involvement, ensuring the hall serves and represents the
+                        interests of Crumpsall's residents.
+                    </p>
+                    <p class="mb-2 lg:text-xl">
+                        This initiative is still in its infancy, and we believe
+                        that the foundation of its success lies in the diverse
+                        contributions of our community members. Whether it's
+                        offering time, skills, resources, or moral support,
+                        every bit of assistance is invaluable.
+                    </p>
+                    <p class="mb-2 lg:text-xl">
+                        We're eager to hear from anyone interested in joining
+                        this exploratory phase. Your ideas, suggestions, and
+                        involvement could help shape the future of the Crumpsall
+                        Community Hall and, by extension, our community at
+                        large.
+                    </p>
                 </div>
-              </div>
-              <div
-                class="swiper-slide"
-                role="group"
-                aria-label="Update 2: Expression of Interest"
-              >
-                <div
-                  class="max-w-sm bg-dark-green text-base-cream rounded-lg shadow-md"
+            </section>
+            <section
+                id="get-involved"
+                class="my-8 flex min-h-[70vh] flex-col items-center bg-dark-green"
+                aria-labelledby="getInvolvedHeading"
+            >
+                <h2
+                    class="my-8 text-4xl font-bold text-base-cream lg:text-6xl"
+                    id="getInvolvedHeading"
                 >
-                  <picture class="flex flex-col items-center">
-                    <source
-                      srcset="./assets/images/ahf.webp"
-                      type="image/webp"
-                    />
-                    <source srcset="./assets/images/ahf.png" type="image/png" />
-                    <img
-                      class="rounded-t-lg"
-                      src="./assets/images/ahf.png"
-                      alt="Architecture Heritage Fund Logo"
-                      height="100%"
-                      width="100%"
-                    />
-                  </picture>
-                  <div class="p-5">
-                    <h3 class="mb-2 text-2xl font-bold tracking-tight">
-                      Expression of Interest
-                    </h3>
-                    <p class="mb-3 font-normal">
-                      We have submitted an Expression of Interest to the
-                      Architecture Heritage Fund for a Project Viability Grant
-                      to cover the cost of a structural survey of the hall.
+                    Get Involved
+                </h2>
+                <div class="xl:1/4 mx-8 text-base-cream md:w-1/2">
+                    <p class="mb-2 lg:text-xl">
+                        Crumpsall Community Co-operative is more than a project;
+                        it's a movement towards creating a sustainable future
+                        for the Crumpsall Community Hall, powered by the
+                        strength and spirit of our local community.
                     </p>
-                  </div>
+                    <p
+                        class="my-4 mb-2 ml-4 text-left text-2xl font-bold italic lg:text-3xl"
+                    >
+                        Your involvement can make a significant difference.
+                    </p>
+                    <p class="mb-2 lg:text-xl">
+                        We are calling on all community members who share our
+                        vision for a revitalized, vibrant Crumpsall Community
+                        Hall to come forward. Whether you can offer time,
+                        skills, resources, or simply your voice in support,
+                        there's a place for you in this endeavor.
+                    </p>
+                    <h3 class="my-2 mb-2 text-xl font-bold lg:text-2xl">
+                        How You Can Help
+                    </h3>
+                    <ul class="mb-2 text-left lg:text-xl">
+                        <li class="mb-2">
+                            <i
+                                class="fa-solid fa-leaf"
+                                style="color: #a7c957"
+                                aria-hidden="true"
+                            ></i>
+                            Volunteer: Lend your hands and hearts in various
+                            capacities, from repair work to event organization.
+                        </li>
+                        <li class="mb-2">
+                            <i
+                                class="fa-solid fa-leaf"
+                                style="color: #a7c957"
+                                aria-hidden="true"
+                            ></i>
+                            Donate: Financial contributions help fund
+                            renovations, programs, and maintenance of the hall.
+                        </li>
+                        <li class="mb-2">
+                            <i
+                                class="fa-solid fa-leaf"
+                                style="color: #a7c957"
+                                aria-hidden="true"
+                            ></i>
+                            Spread the Word: Amplify our cause by sharing it
+                            within your network and on social media.
+                        </li>
+                        <li class="mb-2">
+                            <i
+                                class="fa-solid fa-leaf"
+                                style="color: #a7c957"
+                                aria-hidden="true"
+                            ></i>
+                            Participate: Attend events, meetings, and workshops
+                            to stay informed and involved.
+                        </li>
+                    </ul>
+                    <p class="mb-2 lg:text-xl">
+                        Every action, no matter the size, propels us closer to
+                        our goal. Together, we can transform Crumpsall Community
+                        Hall into a thriving hub of activity, culture, and
+                        connection.
+                    </p>
+                    <button
+                        class="my-8 rounded-lg bg-accent-red px-4 py-2 font-bold text-white"
+                        onclick="window.location.href='#contact';"
+                        aria-label="Navigate to Contact Section"
+                    >
+                        Get Involved
+                    </button>
                 </div>
-              </div>
-            </div>
-            <div
-              class="swiper-button-prev text-accent-red"
-              aria-label="Previous update"
-            ></div>
-            <div
-              class="swiper-button-next text-accent-red"
-              aria-label="Next update"
-            ></div>
-          </div>
-        </div>
-      </section>
-      <section
-        id="faq"
-        class="min-h-[50vh] flex flex-col items-center my-8 text-center"
-      >
-        <h2 class="text-4xl lg:text-6xl font-bold my-8">
-          Frequently Asked Questions
-        </h2>
-        <div class="mx-8 md:w-2/3 flex flex-col justify-center lg:text-3xl">
-          <div class="my-8">
-            <button
-              class="accordion-question w-full py-3 px-5 my-8 bg-dark-green text-base-cream shadow rounded-md text-left"
-              type="button"
-              id="accordianBtn1"
-              aria-expanded="false"
-              aria-controls="faq1"
+            </section>
+            <section
+                id="updates"
+                class="my-8 flex min-h-[70vh] flex-col items-center"
+                aria-labelledby="updatesHeading"
             >
-              What is Crumpsall Community Co-operative?
-            </button>
-            <div
-              class="accordion-answer hidden overflow-hidden bg-light-green shadow mt-2 rounded-md p-4"
-              id="faq1"
-              aria-labelledby="accordianBtn1"
+                <h2
+                    id="updatesHeading"
+                    class="my-8 text-4xl font-bold lg:text-6xl"
+                >
+                    Updates
+                </h2>
+                <div
+                    class="swiper"
+                    role="region"
+                    aria-roledescription="carousel"
+                    aria-label="Updates"
+                >
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div
+                                class="swiper-slide"
+                                role="group"
+                                aria-label="Update 1: Business Support Approved"
+                            >
+                                <div
+                                    class="max-w-sm rounded-lg bg-dark-green text-base-cream shadow-md"
+                                >
+                                    <picture class="flex flex-col items-center">
+                                        <source
+                                            srcset="
+                                                ./assets/images/co-op-uk.webp
+                                            "
+                                            type="image/webp"
+                                        />
+                                        <source
+                                            srcset="
+                                                ./assets/images/co-op-uk.jpg
+                                            "
+                                            type="image/jpeg"
+                                        />
+                                        <img
+                                            class="rounded-t-lg"
+                                            src="./assets/images/co-op-uk.jpg"
+                                            alt="Co-operatives UK Logo"
+                                            height="100%"
+                                            width="100%"
+                                        />
+                                    </picture>
+                                    <div class="p-5">
+                                        <h3
+                                            class="mb-2 text-2xl font-bold tracking-tight"
+                                        >
+                                            Business Support Approved
+                                        </h3>
+                                        <p class="mb-3 font-normal">
+                                            Co-operatives UK have kindly
+                                            approved our application for 5.5
+                                            days of business support as part of
+                                            their Convert to a Co-op support
+                                            package.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="swiper-slide"
+                                role="group"
+                                aria-label="Update 2: Expression of Interest"
+                            >
+                                <div
+                                    class="max-w-sm rounded-lg bg-dark-green text-base-cream shadow-md"
+                                >
+                                    <picture class="flex flex-col items-center">
+                                        <source
+                                            srcset="./assets/images/ahf.webp"
+                                            type="image/webp"
+                                        />
+                                        <source
+                                            srcset="./assets/images/ahf.png"
+                                            type="image/png"
+                                        />
+                                        <img
+                                            class="rounded-t-lg"
+                                            src="./assets/images/ahf.png"
+                                            alt="Architecture Heritage Fund Logo"
+                                            height="100%"
+                                            width="100%"
+                                        />
+                                    </picture>
+                                    <div class="p-5">
+                                        <h3
+                                            class="mb-2 text-2xl font-bold tracking-tight"
+                                        >
+                                            Expression of Interest
+                                        </h3>
+                                        <p class="mb-3 font-normal">
+                                            We have submitted an Expression of
+                                            Interest to the Architecture
+                                            Heritage Fund for a Project
+                                            Viability Grant to cover the cost of
+                                            a structural survey of the hall.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="swiper-button-prev text-accent-red"
+                            aria-label="Previous update"
+                        ></div>
+                        <div
+                            class="swiper-button-next text-accent-red"
+                            aria-label="Next update"
+                        ></div>
+                    </div>
+                </div>
+            </section>
+            <section
+                id="faq"
+                class="my-8 flex min-h-[50vh] flex-col items-center text-center"
             >
-              <p>
-                Crumpsall Community Co-operative is an initiative aimed at
-                fostering community engagement and managing the Crumpsall
-                Community Hall.
-              </p>
-            </div>
-            <button
-              class="accordion-question w-full py-3 px-5 my-8 bg-dark-green text-base-cream shadow rounded-md text-left"
-              type="button"
-              id="accordianBtn2"
-              aria-expanded="false"
-              aria-controls="faq2"
+                <h2 class="my-8 text-4xl font-bold lg:text-6xl">
+                    Frequently Asked Questions
+                </h2>
+                <div
+                    class="mx-8 flex flex-col justify-center md:w-2/3 lg:text-3xl"
+                >
+                    <div class="my-8">
+                        <button
+                            class="accordion-question my-8 w-full rounded-md bg-dark-green px-5 py-3 text-left text-base-cream shadow"
+                            type="button"
+                            id="accordianBtn1"
+                            aria-expanded="false"
+                            aria-controls="faq1"
+                        >
+                            What is Crumpsall Community Co-operative?
+                        </button>
+                        <div
+                            class="accordion-answer mt-2 hidden overflow-hidden rounded-md bg-light-green p-4 shadow"
+                            id="faq1"
+                            aria-labelledby="accordianBtn1"
+                        >
+                            <p>
+                                Crumpsall Community Co-operative is an
+                                initiative aimed at fostering community
+                                engagement and managing the Crumpsall Community
+                                Hall.
+                            </p>
+                        </div>
+                        <button
+                            class="accordion-question my-8 w-full rounded-md bg-dark-green px-5 py-3 text-left text-base-cream shadow"
+                            type="button"
+                            id="accordianBtn2"
+                            aria-expanded="false"
+                            aria-controls="faq2"
+                        >
+                            Where is Crumpsall Community Hall?
+                        </button>
+                        <div
+                            class="accordion-answer mt-2 hidden overflow-hidden rounded-md bg-light-green p-4 shadow"
+                            id="faq2"
+                            aria-labelledby="accordianBtn2"
+                        >
+                            <p>
+                                Crumpsall Community Hall is located on Cleveland
+                                Road, Crumpsall, M8 4GS, Manchester.
+                            </p>
+                        </div>
+                        <button
+                            class="accordion-question my-8 w-full rounded-md bg-dark-green px-5 py-3 text-left text-base-cream shadow"
+                            type="button"
+                            id="accordianBtn3"
+                            aria-expanded="false"
+                            aria-controls="faq3"
+                        >
+                            How can I get involved with the Co-operative?
+                        </button>
+                        <div
+                            class="accordion-answer mt-2 hidden overflow-hidden rounded-md bg-light-green p-4 shadow"
+                            id="faq3"
+                            aria-labelledby="accordianBtn3"
+                        >
+                            <p>
+                                There are several ways to get involved with the
+                                Crumpsall Community Co-operative, including
+                                volunteering for repair and renovation projects,
+                                participating in organizational meetings,
+                                contributing ideas for community programs, and
+                                making financial donations to support our
+                                efforts. Everyone's contribution is valuable,
+                                and we welcome diverse skills and perspectives.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section
+                id="contact"
+                class="mb-8 flex min-h-[70vh] flex-col items-center bg-dark-green px-8 text-base-cream"
             >
-              Where is Crumpsall Community Hall?
-            </button>
-            <div
-              class="accordion-answer hidden overflow-hidden bg-light-green shadow mt-2 rounded-md p-4"
-              id="faq2"
-              aria-labelledby="accordianBtn2"
-            >
-              <p>
-                Crumpsall Community Hall is located on Cleveland Road,
-                Crumpsall, M8 4GS, Manchester.
-              </p>
-            </div>
-            <button
-              class="accordion-question w-full py-3 px-5 my-8 bg-dark-green text-base-cream shadow rounded-md text-left"
-              type="button"
-              id="accordianBtn3"
-              aria-expanded="false"
-              aria-controls="faq3"
-            >
-              How can I get involved with the Co-operative?
-            </button>
-            <div
-              class="accordion-answer hidden overflow-hidden bg-light-green shadow mt-2 rounded-md p-4"
-              id="faq3"
-              aria-labelledby="accordianBtn3"
-            >
-              <p>
-                There are several ways to get involved with the Crumpsall
-                Community Co-operative, including volunteering for repair and
-                renovation projects, participating in organizational meetings,
-                contributing ideas for community programs, and making financial
-                donations to support our efforts. Everyone's contribution is
-                valuable, and we welcome diverse skills and perspectives.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section
-        id="contact"
-        class="bg-dark-green min-h-[70vh] flex flex-col px-8 items-center mb-8 text-base-cream"
-      >
-        <h2 id="formHeading" class="text-4xl lg:text-6xl font-bold my-8">
-          Contact
-        </h2>
-        <form
-          class="space-y-5 w-full md:w-1/2 xl:w-1/3"
-          action="mailto:martinsoftwaredev@outlook.com"
-          method="get"
-          aria-labelledby="formHeading"
+                <h2
+                    id="formHeading"
+                    class="my-8 text-4xl font-bold lg:text-6xl"
+                >
+                    Contact
+                </h2>
+                <form
+                    class="w-full space-y-5 md:w-1/2 xl:w-1/3"
+                    action="mailto:martinsoftwaredev@outlook.com"
+                    method="get"
+                    aria-labelledby="formHeading"
+                >
+                    <div>
+                        <label for="name" class="mb-2 block text-sm font-medium"
+                            >Name</label
+                        >
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            class="w-full rounded-md p-3 text-dark-green shadow-sm"
+                            placeholder="Your Name"
+                            required
+                            aria-required="true"
+                        />
+                    </div>
+                    <div>
+                        <label
+                            for="email"
+                            class="mb-2 block text-sm font-medium"
+                            >Email</label
+                        >
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            class="w-full rounded-md p-3 text-dark-green shadow-sm"
+                            placeholder="Your Email"
+                            required
+                            aria-required="true"
+                        />
+                    </div>
+                    <div>
+                        <label
+                            for="message"
+                            class="mb-2 block text-sm font-medium"
+                            >Message</label
+                        >
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="8"
+                            class="w-full rounded-md p-3 text-dark-green shadow-sm"
+                            placeholder="Your Message"
+                            required
+                            aria-required="true"
+                        ></textarea>
+                    </div>
+                    <input
+                        type="hidden"
+                        name="subject"
+                        value="Crumpsall Community Co-operative"
+                    />
+                    <button
+                        type="submit"
+                        class="my-8 rounded-lg bg-accent-red px-4 py-2 font-bold text-white"
+                        aria-describedby="submitHelp"
+                    >
+                        Send Message
+                    </button>
+                    <div id="submitHelp" hidden>
+                        Pressing this button will submit your details and open
+                        your email client.
+                    </div>
+                </form>
+            </section>
+        </main>
+
+        <section
+            id="gallery"
+            class="flex min-h-[40vh] flex-col items-center"
+            aria-labelledby="galleryHeading"
         >
-          <div>
-            <label for="name" class="text-sm font-medium block mb-2"
-              >Name</label
-            >
-            <input
-              type="text"
-              id="name"
-              name="name"
-              class="w-full p-3 rounded-md shadow-sm text-dark-green"
-              placeholder="Your Name"
-              required
-              aria-required="true"
-            />
-          </div>
-          <div>
-            <label for="email" class="text-sm font-medium block mb-2"
-              >Email</label
-            >
-            <input
-              type="email"
-              id="email"
-              name="email"
-              class="w-full p-3 text-dark-green rounded-md shadow-sm"
-              placeholder="Your Email"
-              required
-              aria-required="true"
-            />
-          </div>
-          <div>
-            <label for="message" class="text-sm font-medium block mb-2"
-              >Message</label
-            >
-            <textarea
-              id="message"
-              name="message"
-              rows="8"
-              class="w-full p-3 text-dark-green rounded-md shadow-sm"
-              placeholder="Your Message"
-              required
-              aria-required="true"
-            ></textarea>
-          </div>
-          <input
-            type="hidden"
-            name="subject"
-            value="Crumpsall Community Co-operative"
-          />
-          <button
-            type="submit"
-            class="bg-accent-red text-white font-bold py-2 px-4 rounded-lg my-8"
-            aria-describedby="submitHelp"
-          >
-            Send Message
-          </button>
-          <div id="submitHelp" hidden>
-            Pressing this button will submit your details and open your email
-            client.
-          </div>
-        </form>
-      </section>
-    </main>
-
-    <section
-      id="gallery"
-      class="min-h-[40vh] flex flex-col items-center"
-      aria-labelledby="galleryHeading"
-    >
-      <h2 id="galleryHeading" class="text-4xl lg:text-6xl font-bold mb-8">
-        Gallery
-      </h2>
-      <div
-        class="swiper"
-        role="region"
-        aria-roledescription="carousel"
-        aria-label="Gallery"
-      >
-        <div class="swiper-container">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide" role="group" aria-label="Gallery Slide 1">
-              <picture class="flex flex-col items-center">
-                <source srcset="./assets/images/hall1.webp" type="image/webp" />
-                <source srcset="./assets/images/hall1.JPG" type="image/jpeg" />
-                <img
-                  class="object-cover w-5/6 rounded-lg shadow-lg"
-                  src="./assets/images/hall1.JPG"
-                  alt="Crumpsall community hall from the side entrance with trees in foreground"
-                  height="100%"
-                  width="100%"
-                />
-              </picture>
-            </div>
-            <div class="swiper-slide" role="group" aria-label="Gallery Slide 2">
-              <picture class="flex flex-col items-center">
-                <source srcset="./assets/images/hall2.webp" type="image/webp" />
-                <source srcset="./assets/images/hall2.JPG" type="image/jpeg" />
-                <img
-                  class="object-cover w-5/6 rounded-lg shadow-lg"
-                  src="./assets/images/hall2.JPG"
-                  alt="Crumpsall community hall from the front showing its large windows along brick wall"
-                  height="100%"
-                  width="100%"
-                />
-              </picture>
-            </div>
-            <div class="swiper-slide" role="group" aria-label="Gallery Slide 3">
-              <picture class="flex flex-col items-center">
-                <source srcset="./assets/images/hall3.webp" type="image/webp" />
-                <source srcset="./assets/images/hall3.JPG" type="image/jpeg" />
-                <img
-                  class="object-cover w-5/6 rounded-lg shadow-lg"
-                  src="./assets/images/hall3.JPG"
-                  alt="Crumpsall community hall side entrance view from inside the hall showing fire exits and toilets"
-                  height="100%"
-                  width="100%"
-                />
-              </picture>
-            </div>
+            <h2 id="galleryHeading" class="mb-8 text-4xl font-bold lg:text-6xl">
+                Gallery
+            </h2>
             <div
-              class="swiper-slide"
-              role="group"
-              aria-label="Gallery Slide 4 "
+                class="swiper"
+                role="region"
+                aria-roledescription="carousel"
+                aria-label="Gallery"
             >
-              <picture class="flex flex-col items-center">
-                <source srcset="./assets/images/hall4.webp" type="image/webp" />
-                <source srcset="./assets/images/hall4.JPG" type="image/jpeg" />
-                <img
-                  class="object-cover w-5/6 rounded-lg shadow-lg"
-                  src="./assets/images/hall4.JPG"
-                  alt="crumpsall community hall stage with kitchen off to the right"
-                  height="100%"
-                  width="100%"
-                />
-              </picture>
-            </div>
-          </div>
-          <div
-            class="swiper-button-prev text-accent-red"
-            aria-label="Previous picture"
-          ></div>
-          <div
-            class="swiper-button-next text-accent-red"
-            aria-label="Next picture"
-          ></div>
-        </div>
-      </div>
-    </section>
-
-    <section
-      id="testimonials"
-      class="min-h-[50vh] flex flex-col items-center mt-8 bg-green"
-      aria-labelledby="testimonialsHeading"
-    >
-      <h2
-        id="testimonialsHeading"
-        class="text-4xl lg:text-6xl font-bold my-8 text-white"
-      >
-        Testimonials
-      </h2>
-      <div
-        class="swiper"
-        role="region"
-        aria-roledescription="carousel"
-        aria-label="Testimonials"
-      >
-        <div class="swiper-container">
-          <div class="swiper-wrapper">
-            <div
-              class="swiper-slide"
-              role="group"
-              aria-label="Testimonial by Barbara S"
-            >
-              <div
-                class="max-w-sm bg-dark-green text-base-cream rounded-lg shadow-md md:max-w-1/2"
-              >
-                <div class="p-5">
-                  <h3 class="mb-2 text-2xl font-bold tracking-tight">
-                    Ready to go!
-                  </h3>
-                  <p class="mb-3 font-normal">
-                    We're ready to pour our hearts into this, not for profit or
-                    praise, but because caring for our community is just what we
-                    do. It's about nurturing our collective spirit, making sure
-                    everyone has a place at the table, and moving forward,
-                    together.
-                  </p>
-                  <p>Barbara S</p>
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div
+                            class="swiper-slide"
+                            role="group"
+                            aria-label="Gallery Slide 1"
+                        >
+                            <picture class="flex flex-col items-center">
+                                <source
+                                    srcset="./assets/images/hall1.webp"
+                                    type="image/webp"
+                                />
+                                <source
+                                    srcset="./assets/images/hall1.JPG"
+                                    type="image/jpeg"
+                                />
+                                <img
+                                    class="w-5/6 rounded-lg object-cover shadow-lg"
+                                    src="./assets/images/hall1.JPG"
+                                    alt="Crumpsall community hall from the side entrance with trees in foreground"
+                                    height="100%"
+                                    width="100%"
+                                />
+                            </picture>
+                        </div>
+                        <div
+                            class="swiper-slide"
+                            role="group"
+                            aria-label="Gallery Slide 2"
+                        >
+                            <picture class="flex flex-col items-center">
+                                <source
+                                    srcset="./assets/images/hall2.webp"
+                                    type="image/webp"
+                                />
+                                <source
+                                    srcset="./assets/images/hall2.JPG"
+                                    type="image/jpeg"
+                                />
+                                <img
+                                    class="w-5/6 rounded-lg object-cover shadow-lg"
+                                    src="./assets/images/hall2.JPG"
+                                    alt="Crumpsall community hall from the front showing its large windows along brick wall"
+                                    height="100%"
+                                    width="100%"
+                                />
+                            </picture>
+                        </div>
+                        <div
+                            class="swiper-slide"
+                            role="group"
+                            aria-label="Gallery Slide 3"
+                        >
+                            <picture class="flex flex-col items-center">
+                                <source
+                                    srcset="./assets/images/hall3.webp"
+                                    type="image/webp"
+                                />
+                                <source
+                                    srcset="./assets/images/hall3.JPG"
+                                    type="image/jpeg"
+                                />
+                                <img
+                                    class="w-5/6 rounded-lg object-cover shadow-lg"
+                                    src="./assets/images/hall3.JPG"
+                                    alt="Crumpsall community hall side entrance view from inside the hall showing fire exits and toilets"
+                                    height="100%"
+                                    width="100%"
+                                />
+                            </picture>
+                        </div>
+                        <div
+                            class="swiper-slide"
+                            role="group"
+                            aria-label="Gallery Slide 4 "
+                        >
+                            <picture class="flex flex-col items-center">
+                                <source
+                                    srcset="./assets/images/hall4.webp"
+                                    type="image/webp"
+                                />
+                                <source
+                                    srcset="./assets/images/hall4.JPG"
+                                    type="image/jpeg"
+                                />
+                                <img
+                                    class="w-5/6 rounded-lg object-cover shadow-lg"
+                                    src="./assets/images/hall4.JPG"
+                                    alt="crumpsall community hall stage with kitchen off to the right"
+                                    height="100%"
+                                    width="100%"
+                                />
+                            </picture>
+                        </div>
+                    </div>
+                    <div
+                        class="swiper-button-prev text-accent-red"
+                        aria-label="Previous picture"
+                    ></div>
+                    <div
+                        class="swiper-button-next text-accent-red"
+                        aria-label="Next picture"
+                    ></div>
                 </div>
-              </div>
             </div>
-            <div
-              class="swiper-slide"
-              role="group"
-              aria-label="Testimonial by Shakar H"
-            >
-              <div
-                class="max-w-sm bg-dark-green text-base-cream rounded-lg shadow-md"
-              >
-                <div class="p-5">
-                  <h3 class="mb-2 text-2xl font-bold tracking-tight">
-                    I ❤️ Crumpsall
-                  </h3>
-                  <p class="mb-3 font-normal">
-                    I love to help our local people and am an active member of
-                    the community.
-                  </p>
-                  <p>Shakar H</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="swiper-button-prev text-accent-red"
-            aria-label="Previous testimonial"
-          ></div>
-          <div
-            class="swiper-button-next text-accent-red"
-            aria-label="Next testimonial"
-          ></div>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <footer
-      id="footer"
-      class="bg-dark-green h-[20vh] flex flex-col items-center text-base-cream justify-center text-center"
-    >
-      <!--  Links  -->
-      <!--  Socials  -->
-      <!--  Contact  -->
-      <p>
-        © 2024 Crumpsall Community Ltd <br />trading as <br />
-        Crumpsall Community Co-operative
-      </p>
-    </footer>
-    <script
-      src="https://kit.fontawesome.com/2c85c2123e.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-    <script type="module" src="./js/gsap.js"></script>
-    <script type="module" src="./js/spline.js"></script>
-    <script type="module" src="./js/nav.js"></script>
-    <script type="module" src="./js/swiper.js"></script>
-    <script type="module" src="./js/accordian.js"></script>
-  </body>
+        <section
+            id="testimonials"
+            class="mt-8 flex min-h-[50vh] flex-col items-center bg-green"
+            aria-labelledby="testimonialsHeading"
+        >
+            <h2
+                id="testimonialsHeading"
+                class="my-8 text-4xl font-bold text-white lg:text-6xl"
+            >
+                Testimonials
+            </h2>
+            <div
+                class="swiper"
+                role="region"
+                aria-roledescription="carousel"
+                aria-label="Testimonials"
+            >
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div
+                            class="swiper-slide"
+                            role="group"
+                            aria-label="Testimonial by Barbara S"
+                        >
+                            <div
+                                class="md:max-w-1/2 max-w-sm rounded-lg bg-dark-green text-base-cream shadow-md"
+                            >
+                                <div class="p-5">
+                                    <h3
+                                        class="mb-2 text-2xl font-bold tracking-tight"
+                                    >
+                                        Ready to go!
+                                    </h3>
+                                    <p class="mb-3 font-normal">
+                                        We're ready to pour our hearts into
+                                        this, not for profit or praise, but
+                                        because caring for our community is just
+                                        what we do. It's about nurturing our
+                                        collective spirit, making sure everyone
+                                        has a place at the table, and moving
+                                        forward, together.
+                                    </p>
+                                    <p>Barbara S</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="swiper-slide"
+                            role="group"
+                            aria-label="Testimonial by Shakar H"
+                        >
+                            <div
+                                class="max-w-sm rounded-lg bg-dark-green text-base-cream shadow-md"
+                            >
+                                <div class="p-5">
+                                    <h3
+                                        class="mb-2 text-2xl font-bold tracking-tight"
+                                    >
+                                        I ❤️ Crumpsall
+                                    </h3>
+                                    <p class="mb-3 font-normal">
+                                        I love to help our local people and am
+                                        an active member of the community.
+                                    </p>
+                                    <p>Shakar H</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="swiper-button-prev text-accent-red"
+                        aria-label="Previous testimonial"
+                    ></div>
+                    <div
+                        class="swiper-button-next text-accent-red"
+                        aria-label="Next testimonial"
+                    ></div>
+                </div>
+            </div>
+        </section>
+
+        <footer
+            id="footer"
+            class="flex h-[20vh] flex-col items-center justify-center bg-dark-green text-center text-base-cream"
+        >
+            <!--  Links  -->
+            <!--  Socials  -->
+            <!--  Contact  -->
+            <p>
+                © 2024 Crumpsall Community Ltd <br />trading as <br />
+                Crumpsall Community Co-operative
+            </p>
+        </footer>
+        <script
+            src="https://kit.fontawesome.com/2c85c2123e.js"
+            crossorigin="anonymous"
+        ></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+        <script type="module" src="./js/gsap.js"></script>
+        <script type="module" src="./js/spline.js"></script>
+        <script type="module" src="./js/nav.js"></script>
+        <script type="module" src="./js/swiper.js"></script>
+        <script type="module" src="./js/accordian.js"></script>
+    </body>
 </html>
-
