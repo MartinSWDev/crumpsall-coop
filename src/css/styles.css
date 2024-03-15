@@ -1,31 +1,30 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 section {
-  scroll-margin-top: 13em;
+    scroll-margin-top: 13em;
 }
 
 .swiper {
-  width: 100%;
-  max-width: 100%;
+    width: 100%;
+    max-width: 100%;
 }
 
 @media screen and (min-width: 640px) {
-  .swiper {
-    max-width: 60%;
-  }
+    .swiper {
+        max-width: 60%;
+    }
 }
 
 .swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
