@@ -3,8 +3,9 @@ gsap.registerPlugin(ScrollTrigger);
 // Timeline to handle brick animation and dropdown
 let isX = false;
 
-const tl = gsap.timeline({ paused: true });
-tl.to("#row2, #row4", { opacity: 0, ease: "power1.out", duration: 0.5 })
+const brickTL = gsap.timeline({ paused: true });
+brickTL
+  .to("#row2, #row4", { opacity: 0, ease: "power1.out", duration: 0.5 })
   .to(
     "#row1",
     {
@@ -30,9 +31,9 @@ tl.to("#row2, #row4", { opacity: 0, ease: "power1.out", duration: 0.5 })
 
 export default function toggleBrickAnimation() {
   if (!isX) {
-    tl.play();
+    brickTL.play();
   } else {
-    tl.reverse();
+    brickTL.reverse();
   }
   isX = !isX;
 }

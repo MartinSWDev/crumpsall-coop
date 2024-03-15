@@ -10,7 +10,7 @@ app
       scrollTrigger: {
         trigger: "#hero",
         start: "top top",
-        end: "bottom bottom",
+        end: "bottom  center",
         scrub: true,
         onscroll: () => {
           app.emitEvent("step", "bigHouse");
