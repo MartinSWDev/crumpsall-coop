@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
             onReverseComplete: () => {
                 dropdownMenu.classList.add('hidden')
                 dropdownMenu.style.visibility = 'hidden'
+                dropdownButton.setAttribute('aria-pressed', 'false')
             },
         })
         .to(dropdownMenu, { scaleY: 1, duration: 0.3, ease: 'none' }, 0)
@@ -54,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const isPressed = dropdownButton.getAttribute('aria-pressed') === 'true'
-        dropdownButton.setAttribute('aria-pressed', String(!isPressed))
+        dropdownButton.setAttribute('aria-pressed', !isPressed)
     })
 
     // Dropdown close on link click
@@ -62,10 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', () => {
             if (!dropdownTL.reversed()) {
                 toggleBrickAnimation()
-                dropdownTL.reverse().eventCallback('onReverseComplete', () => {
-                    dropdownMenu.classList.add('hidden')
-                    dropdownButton.setAttribute('aria-pressed', 'false')
-                })
+                dropdownTL.reverse()
             }
         })
     })
@@ -96,9 +94,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (intersectingEntries.length > 0) {
                 const topIntersectingEntry = intersectingEntries[0]
-                dropdownP.textContent = topIntersectingEntry.target
-                    .querySelector('h2')
-                    .textContent.trim()
+                const h2 = topIntersectingEntry.target.querySelector('h2')
+                dropdownP.textContent = h2.textContent.trim()
             }
         },
         {
